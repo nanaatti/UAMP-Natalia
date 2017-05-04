@@ -1,0 +1,53 @@
+.container-fluid {
+    background-color:gainsboro;
+}
+
+header {
+    text-align: center;
+    margin-top: 2em;
+    background-color: lightcoral;
+    padding: 0.5em;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+
+#input {
+    text-align: center;
+    margin: auto;
+}
+
+#menu {
+    text-align: center;
+    margin: auto;
+    display: none;
+}
+
+#artistMenu {
+    margin: auto;
+    text-align: center;
+}
+
+#artistContainer {
+    text-align: center;
+}
+
+#searchbutton {
+    margin-right: 20em;
+}
+
+#listheader {
+    text-align: center;
+    padding: 3em;
+}
+
+#images {
+    text-align: center;
+}
+
+img {
+    width: 300px;
+}
