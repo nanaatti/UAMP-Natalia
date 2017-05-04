@@ -1,5 +1,6 @@
 .container-fluid {
     background-color:gainsboro;
+    width: 100%;
 }
 
 header {
