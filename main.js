@@ -1,8 +1,7 @@
-// tänne tapahtumakuuntelijat
-
 $(document).ready(function () {
     console.log("ready!");
 
+    // Hakunappuloiden toiminnot
     $('#searchbutton').click(function () {
         console.log('artistilista');
         getID();
@@ -13,6 +12,7 @@ $(document).ready(function () {
         findArtists();
     });
 
+    // Haetaan artistin ID
     function getID() {
         artistID = $('#artistMenu').find(":selected").val();
         getArtists(artistID);
@@ -33,6 +33,7 @@ $(document).ready(function () {
         $('#artistContainer').empty();
     }
 
+    // Käydään läpi samankaltaiset artistit ja tulostetaan näytölle
     function printRelatedArtists(data) {
         $.each(data.artists, function (key, value) {
             var p = $('<p />').val(value.id).text(value.name);
@@ -40,10 +41,11 @@ $(document).ready(function () {
         });
     }
 
+    // Etsitään artisteja syötteen perusteella
     function findArtists() {
         input = $('#userinput').val();
-        searchUrl = "https://api.spotify.com/v1/search?q="+input+"&type=artist";
-        
+        searchUrl = "https://api.spotify.com/v1/search?q=" + input + "&type=artist";
+
         $.ajax({
             'url': searchUrl,
             'dataType': 'json',
@@ -51,6 +53,7 @@ $(document).ready(function () {
         });
     }
 
+    // Etsitään syötteen perusteella haetun artistin ID
     function getSearchID(data) {
         getArtists(data.artists.items[0].id);
         console.log(data);
